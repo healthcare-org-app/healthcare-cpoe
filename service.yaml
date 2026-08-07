@@ -1,0 +1,15 @@
+name: cpoe-service
+port: 8308
+lang: python
+description: "cpoe-service \u2014 domain: ehr"
+http_deps:
+- ehr-service
+- drug-interactions-service
+- formulary-service
+- audit-log-service
+publishes:
+- order.placed
+- audit.event
+subscribes:
+- lab.result.available
+- imaging.result.available
